@@ -1,15 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Gotta Go</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gotta Go</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: Arial, sans-serif;
+        background: #f6f7fb;
+      }
+      .card {
+        width: min(560px, 92vw);
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 14px;
+        padding: 28px;
+      }
+      h1 { margin: 0 0 10px 0; font-size: 40px; }
+      p { margin: 0 0 16px 0; color: #444; }
+      button {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid #999;
+        background: #f3f3f3;
+        cursor: pointer;
+      }
+    </style>
+  </head>
 
-<h1>Gotta Go</h1>
-<p>Bathroom search coming next!</p>
-<button onclick="alert('Bathroom search coming next!')">
-  Find a bathroom
-</button>
-
-</body>
+  <body>
+    <div class="card">
+      <h1>Gotta Go</h1>
+      <p>Bathroom search coming next!</p>
+      <button onclick="alert('Bathroom search coming next!')">Find a bathroom</button>
+    </div>
+  </body>
 </html>
