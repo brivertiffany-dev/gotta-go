@@ -1,2 +1,10 @@
 <div id="map" style="height:400px; width:100%;"></div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+<script>
+  function initMap() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 37.7749, lng: -122.4194 }, // San Francisco as example
+      zoom: 12
+    });
+  }
+</script>
