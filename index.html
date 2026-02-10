@@ -2,70 +2,73 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gotta Go</title>
 
     <style>
       body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
         margin: 0;
         min-height: 100vh;
         display: flex;
-        align-items: center;
         justify-content: center;
-        background: #f4f6fb;
-        font-family: Arial, sans-serif;
+        align-items: flex-start;
+        padding-top: 40px;
       }
 
       .card {
-        width: min(720px, 92vw);
-        background: white;
-        border-radius: 16px;
-        padding: 20px;
+        width: 800px;
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 22px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
       }
 
-      h1 { margin: 0 0 8px; }
-      p { margin: 0 0 12px; color: #444; }
-
       button {
-        background: #2f6feb;
+        background: #1976d2;
         color: white;
         border: none;
-        padding: 10px 14px;
+        padding: 12px 18px;
         border-radius: 10px;
+        font-size: 16px;
         cursor: pointer;
-        font-size: 14px;
       }
 
       #map {
-        margin-top: 14px;
+        margin-top: 16px;
         height: 400px;
         width: 100%;
         border-radius: 12px;
-        overflow: hidden;
       }
     </style>
+
+    <script>
+      function initMap() {
+        const center = { lat: 37.7749, lng: -122.4194 }; // San Francisco
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center,
+        });
+
+        new google.maps.Marker({
+          position: center,
+          map,
+          title: "Gotta Go!",
+        });
+      }
+    </script>
   </head>
 
   <body>
     <div class="card">
       <h1>Gotta Go</h1>
       <p>Bathroom search coming next!</p>
-
       <button onclick="alert('Bathroom search coming next!')">Find a bathroom</button>
 
       <div id="map"></div>
     </div>
 
-    <script>
-      function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 37.7749, lng: -122.4194 },
-          zoom: 12
-        });
-      }
-    </script>
-
+    <!-- IMPORTANT: Replace YOUR_API_KEY_HERE with your real key -->
     <script
       async
       defer
